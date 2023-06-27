@@ -9,30 +9,31 @@ class Bank:
         self.users = {}
         self.admins = {}
 
+    @staticmethod
     def addUser(self, user):
         self.users[user.accountNumber] = user
 
     def addAdmin(self, admin):
         self.admins[admin.adminId] = admin
 
-    def checkBankBalance(self, admin):
-        if admin.adminId in self.admins:
+    def checkBankBalance(self, adminId):
+        if adminId in self.admins:
             return Bank.totalBalance
         else:
             return "Only admins can check the bank balance."
 
-    def getLoanAmount(self, admin):
-        if admin.adminId in self.admins:
+    def getLoanAmount(self, adminId):
+        if adminId in self.admins:
             return Bank.totalLoanAmount
         else:
             return "Only admins can check the total loan amount."
 
-    def changeLoanFeature(self, admin):
-        if admin.adminId in self.admins:
+    def changeLoanFeature(self, adminId):
+        if adminId in self.admins:
             Bank.loanActive = not Bank.loanActive
             return f"Loan feature is {'active' if Bank.loanActive else 'disabled'}."
         else:
             return "Only admins can change the loan feature."
-        
+
     def __repr__(self) -> str:
         print(f"*********{self.name}*********")

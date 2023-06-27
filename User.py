@@ -12,9 +12,9 @@ class User(Person):
         self.transactionHistory = []
 
     @classmethod
-    def generateAccountNumber(cls):
-        cls.userCount += 1
-        return f"U{cls.userCount}-{random.randint(1000, 9999)}"
+    def generateAccountNumber(self):
+        self.userCount += 1
+        return f"U{self.userCount}-{random.randint(1000, 9999)}"
 
     def deposit(self, amount):
         self.balance += amount
