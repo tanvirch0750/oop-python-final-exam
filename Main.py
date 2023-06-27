@@ -9,12 +9,15 @@ def main():
     # create admin
     admin1 = Admin("Israk Chowdhury", "israk@email.com", "1234", bank)
     admin2 = Admin("Tanvir Chowdhury", "tanvir@email.com", "1234", bank)
+
     bank.addAdmin(admin1)
     bank.addAdmin(admin2)
 
-    # create user by admin
+    # create user
     userHasan = User("Hasan Mahmud", "hasan@email.com", "1234")
     userJubaer = User("Jubaer Ahmed", "jubaer@email.com", "1234")
+
+    # add user to bank
     admin1.create_account(userHasan)
     admin1.create_account(userJubaer)
 

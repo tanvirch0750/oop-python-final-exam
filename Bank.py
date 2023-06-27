@@ -2,18 +2,18 @@ class Bank:
     totalBalance = 0
     totalLoanAmount = 0
     loanActive = True
+    users = {}
+    admins = {}
 
     def __init__(self, name, address) -> None:
         self.name = name
         self.address = address
-        self.users = {}
-        self.admins = {}
 
     def addUser(self, user):
-        self.users[user.accountNumber] = user
+        Bank.users[user.accountNumber] = user
 
     def addAdmin(self, admin):
-        self.admins[admin.adminId] = admin
+        Bank.admins[admin.adminId] = admin
 
     def checkBankBalance(self, adminId):
         if adminId in self.admins:
