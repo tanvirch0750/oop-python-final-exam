@@ -54,6 +54,9 @@ class User(Person):
                 self.transactionHistory.append(
                     f"Transferred: {amount} to {recipient.name}"
                 )
+                recipient.transactionHistory.append(
+                    f"Received: {amount} from {self.name}"
+                )
             else:
                 return "Not enough funds. Unable to transfer."
         else:

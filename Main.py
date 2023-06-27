@@ -43,6 +43,8 @@ def main():
     loan = userJubaer.takeLoan()
     print(loan)
 
+    userHasan.withdraw(1000)
+
     # admin check balance
     total_balance = admin2.checkBankBalance()
     print(f"Total Balance: {total_balance}")
