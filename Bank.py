@@ -9,7 +9,6 @@ class Bank:
         self.users = {}
         self.admins = {}
 
-    @staticmethod
     def addUser(self, user):
         self.users[user.accountNumber] = user
 
@@ -36,4 +35,36 @@ class Bank:
             return "Only admins can change the loan feature."
 
     def __repr__(self) -> str:
+        print(" ")
+        print("******************************")
         print(f"*********{self.name}*********")
+        print("******************************")
+        print(" ")
+        print(f"=========Bank Stats==========")
+        print(" ")
+        print(f"Bank Total Balance: {self.totalBalance}")
+        print(f"Bank Total Loan: {self.totalLoanAmount}")
+        print(f"Loan Status: {self.loanActive}")
+        print(" ")
+        print(f"==========Bank Admins=========")
+        print(" ")
+        print("--------------------")
+        for key, admin in self.admins.items():
+            print(f"Name: {admin.name}")
+            print(f"Id: {key}")
+            print(f"Email: {admin.email}")
+            print("--------------------")
+        print(" ")
+        print(f"===========Bank Users==========")
+        print(" ")
+        print("--------------------")
+        for key, user in self.users.items():
+            print(f"Name: {user.name}")
+            print(f"Account Number: {key}")
+            print(f"Email: {user.email}")
+            print(f"Balance: {user.balance}")
+            print(f"Loan Amount: {user.loanAmount}")
+            print(f"Transaction History: {user.transactionHistory}")
+            print("--------------------")
+
+        return ""
